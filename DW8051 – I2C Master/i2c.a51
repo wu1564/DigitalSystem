@@ -1,0 +1,61 @@
+	ORG 0
+	MOV R0,#250;
+	DJNZ R0,$
+	MOV R0,#250;
+	DJNZ R0,$
+		
+	MOV 9CH,#0A0H;
+	MOV 9AH,#11H;
+j0:	MOV A,9BH
+	CJNE A,#01H,j0;
+		
+	MOV 9CH,#00H;
+	MOV 9AH,#11H;
+j1:	MOV A,9BH
+	CJNE A,#01H,j1;
+		
+	MOV 9CH,#00H;
+	MOV 9AH,#11H;
+j2:	MOV A,9BH
+	CJNE A,#01H,j2;
+	
+	MOV 9CH,#12H;
+	MOV 9AH,#11H;
+j3:	MOV A,9BH
+	CJNE A,#01H,j3;
+	////////////////////////////////////////////
+		//MOV R4,#50
+DELAY: 	MOV R5,#1
+DL1: 	MOV R6,#200
+DL2: 	MOV R7,#230
+		DJNZ R7,$
+		DJNZ R6,DL2
+		DJNZ R5,DL1
+		//DJNZ R4,DELAY
+
+
+	MOV 9CH,#0A0H;
+	MOV 9AH,#11H;
+j4:	MOV A,9BH
+	CJNE A,#01H,j4;
+		
+	MOV 9CH,#00H;
+	MOV 9AH,#11H;
+j5:	MOV A,9BH
+	CJNE A,#01H,j5;
+		
+	MOV 9CH,#01H;
+	MOV 9AH,#11H;
+j6:	MOV A,9BH
+	CJNE A,#01H,j6;
+	
+	MOV 9CH,#34H;
+	MOV 9AH,#11H;
+j7:	MOV A,9BH
+	CJNE A,#01H,j7;
+	
+DL3: 	MOV R6,#100
+DL4: 	MOV R7,#230
+		DJNZ R7,$
+		DJNZ R6,DL4
+	END

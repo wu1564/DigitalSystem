@@ -1,0 +1,99 @@
+A51 MACRO ASSEMBLER  I2C                                                                  05/10/2021 18:10:37 PAGE     1
+
+
+MACRO ASSEMBLER A51 V8.02b
+OBJECT MODULE PLACED IN i2c.OBJ
+ASSEMBLER INVOKED BY: C:\Keil_v4\C51\BIN\A51.EXE i2c.a51 SET(SMALL) DEBUG EP
+
+LOC  OBJ            LINE     SOURCE
+
+0000                   1             ORG 0
+0000 78FA              2             MOV R0,#250;
+0002 D8FE              3             DJNZ R0,$
+0004 78FA              4             MOV R0,#250;
+0006 D8FE              5             DJNZ R0,$
+                       6                     
+0008 759CA0            7             MOV 9CH,#0A0H;
+000B 759A11            8             MOV 9AH,#11H;
+000E E59B              9     j0:     MOV A,9BH
+0010 B401FB           10             CJNE A,#01H,j0;
+                      11                     
+0013 759C00           12             MOV 9CH,#00H;
+0016 759A11           13             MOV 9AH,#11H;
+0019 E59B             14     j1:     MOV A,9BH
+001B B401FB           15             CJNE A,#01H,j1;
+                      16                     
+001E 759C00           17             MOV 9CH,#00H;
+0021 759A11           18             MOV 9AH,#11H;
+0024 E59B             19     j2:     MOV A,9BH
+0026 B401FB           20             CJNE A,#01H,j2;
+                      21             
+0029 759C12           22             MOV 9CH,#12H;
+002C 759A11           23             MOV 9AH,#11H;
+002F E59B             24     j3:     MOV A,9BH
+0031 B401FB           25             CJNE A,#01H,j3;
+                      26             
+                      27                     
+0034 7D01             28     DELAY:  MOV R5,#1
+0036 7EC8             29     DL1:    MOV R6,#200
+0038 7FE6             30     DL2:    MOV R7,#230
+003A DFFE             31                     DJNZ R7,$
+003C DEFA             32                     DJNZ R6,DL2
+003E DDF6             33                     DJNZ R5,DL1
+                      34                     
+                      35     
+                      36     
+0040 759CA0           37             MOV 9CH,#0A0H;
+0043 759A11           38             MOV 9AH,#11H;
+0046 E59B             39     j4:     MOV A,9BH
+0048 B401FB           40             CJNE A,#01H,j4;
+                      41                     
+004B 759C00           42             MOV 9CH,#00H;
+004E 759A11           43             MOV 9AH,#11H;
+0051 E59B             44     j5:     MOV A,9BH
+0053 B401FB           45             CJNE A,#01H,j5;
+                      46                     
+0056 759C01           47             MOV 9CH,#01H;
+0059 759A11           48             MOV 9AH,#11H;
+005C E59B             49     j6:     MOV A,9BH
+005E B401FB           50             CJNE A,#01H,j6;
+                      51             
+0061 759C34           52             MOV 9CH,#34H;
+0064 759A11           53             MOV 9AH,#11H;
+0067 E59B             54     j7:     MOV A,9BH
+0069 B401FB           55             CJNE A,#01H,j7;
+                      56             
+006C 7E64             57     DL3:    MOV R6,#100
+006E 7FE6             58     DL4:    MOV R7,#230
+A51 MACRO ASSEMBLER  I2C                                                                  05/10/2021 18:10:37 PAGE     2
+
+0070 DFFE             59                     DJNZ R7,$
+0072 DEFA             60                     DJNZ R6,DL4
+                      61             END
+A51 MACRO ASSEMBLER  I2C                                                                  05/10/2021 18:10:37 PAGE     3
+
+SYMBOL TABLE LISTING
+------ ----- -------
+
+
+N A M E             T Y P E  V A L U E   ATTRIBUTES
+
+DELAY. . . . . . .  C ADDR   0034H   A   
+DL1. . . . . . . .  C ADDR   0036H   A   
+DL2. . . . . . . .  C ADDR   0038H   A   
+DL3. . . . . . . .  C ADDR   006CH   A   
+DL4. . . . . . . .  C ADDR   006EH   A   
+J0 . . . . . . . .  C ADDR   000EH   A   
+J1 . . . . . . . .  C ADDR   0019H   A   
+J2 . . . . . . . .  C ADDR   0024H   A   
+J3 . . . . . . . .  C ADDR   002FH   A   
+J4 . . . . . . . .  C ADDR   0046H   A   
+J5 . . . . . . . .  C ADDR   0051H   A   
+J6 . . . . . . . .  C ADDR   005CH   A   
+J7 . . . . . . . .  C ADDR   0067H   A   
+
+
+REGISTER BANK(S) USED: 0 
+
+
+ASSEMBLY COMPLETE.  0 WARNING(S), 0 ERROR(S)
